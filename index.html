@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eaf3ee">
+  <title>😌 Sakin Kal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="header">
+      <div class="emoji">😌</div>
+      <h1>Sakin Kal</h1>
+      <p>Bir nefes al, sonra devam et.</p>
+    </header>
+
+    <section id="login" class="panel login-panel">
+      <h2>Giriş yap</h2>
+      <p>Berat ve Kardelen için oluşturulan hesapla giriş yapın.</p>
+      <form id="loginForm">
+        <label for="email">E-posta</label>
+        <input id="email" type="email" autocomplete="username" required placeholder="ornek@mail.com">
+        <label for="password">Şifre</label>
+        <input id="password" type="password" autocomplete="current-password" required placeholder="Şifreniz">
+        <button class="primary" type="submit">Giriş yap</button>
+        <p id="loginError" class="error" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="app" hidden>
+      <div id="quotaAlert" class="alert" hidden>Biraz sakinleşin lütfen! 😌 Derin bir nefes alın.</div>
+      <div class="topline">
+        <span id="status" class="status">Bağlanıyor…</span>
+        <button id="logout" class="text-button" type="button">Çıkış yap</button>
+      </div>
+      <div class="cards">
+        <article class="counter-card berat">
+          <div class="card-head"><span class="avatar">B</span><div><h2>Berat</h2><p>Kendi sayacı</p></div></div>
+          <div class="count"><strong id="beratCount">20</strong><span>/ 20 hak</span></div>
+          <div class="meter"><div id="beratMeter" class="meter-fill"></div></div>
+          <button id="beratButton" class="primary" type="button">Küfür ettim — işaretle</button>
+        </article>
+        <article class="counter-card kardelen">
+          <div class="card-head"><span class="avatar">K</span><div><h2>Kardelen</h2><p>Kendi sayacı</p></div></div>
+          <div class="count"><strong id="kardelenCount">20</strong><span>/ 20 hak</span></div>
+          <div class="meter"><div id="kardelenMeter" class="meter-fill"></div></div>
+          <button id="kardelenButton" class="primary" type="button">Küfür ettim — işaretle</button>
+        </article>
+      </div>
+      <section class="message-panel">
+        <div class="message-icon">🌿</div>
+        <p id="calmMessage" aria-live="polite">Derin bir nefes al. Her tartışmayı kazanmak zorunda değilsin.</p>
+      </section>
+      <div class="bottomline">
+        <span id="resetInfo">Sayaçlar 24 saatte bir yenilenir.</span>
+        <button id="musicButton" class="secondary" type="button" hidden>Müziği başlat</button>
+      </div>
+      <audio id="calmAudio" preload="none"></audio>
+      <p class="footnote">Sayaçlar iki cihaz arasında çevrim içi senkronize edilir.</p>
+    </section>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
